@@ -1,0 +1,562 @@
+{
+  "styles": [
+    {
+      "name": "title",
+      "color": "0x000000",
+      "horizontalAlignment": "LEFT",
+      "bold": true
+    },
+    {
+      "name": "title-1",
+      "color": "0x000000",
+      "horizontalAlignment": "RIGHT",
+      "bold": true
+    },
+    {
+      "name": "header",
+      "color": "0xffffff",
+      "backgroundColor": "48,84,150",
+      "horizontalAlignment": "CENTER",
+      "bold": false
+    },
+    {
+      "name": "header-segmento-0",
+      "color": "0xffffff",
+      "backgroundColor": "48,84,150",
+      "horizontalAlignment": "CENTER",
+      "bold": false
+    },
+    {
+      "name": "header-segmento-1",
+      "color": "0xffffff",
+      "backgroundColor": "30,161,194",
+      "horizontalAlignment": "CENTER",
+      "bold": false
+    },
+    {
+      "name": "header-en-tiempo",
+      "color": "0xffffff",
+      "backgroundColor": "0,176,80",
+      "horizontalAlignment": "CENTER",
+      "bold": false
+    },
+    {
+      "name": "header-vencida",
+      "color": "0xffffff",
+      "backgroundColor": "192,0,0",
+      "horizontalAlignment": "CENTER",
+      "bold": false
+    },
+    {
+      "name": "header-no-atendida",
+      "color": "0x000000",
+      "backgroundColor": "255,242,204",
+      "horizontalAlignment": "CENTER",
+      "bold": false
+    },
+    {
+      "name": "header-rechazada",
+      "color": "0x000000",
+      "backgroundColor": "251,235,247",
+      "horizontalAlignment": "CENTER",
+      "bold": false
+    },
+    {
+      "name": "header-eliminada",
+      "color": "0x000000",
+      "backgroundColor": "255,192,0",
+      "horizontalAlignment": "CENTER",
+      "bold": false
+    },
+    {
+      "name": "header-entidad",
+      "color": "0xffffff",
+      "backgroundColor": "47,117,181",
+      "horizontalAlignment": "LEFT",
+      "bold": false,
+      "borderBottom": "THIN"
+    },
+    {
+      "name": "header-entidad-num",
+      "color": "0xffffff",
+      "backgroundColor": "47,117,181",
+      "horizontalAlignment": "CENTER",
+      "bold": false,
+      "borderBottom": "THIN"
+    },
+    {
+      "name": "row-solicitud",
+      "color": "0x000000",
+      "horizontalAlignment": "LEFT",
+      "bold": false,
+      "borderBottom": "THIN"
+    },
+    {
+      "name": "row-solicitud-num",
+      "color": "0x000000",
+      "horizontalAlignment": "CENTER",
+      "bold": false,
+      "borderBottom": "THIN"
+    },
+    {
+      "name": "detail-header",
+      "color": "0x000000",
+      "horizontalAlignment": "LEFT",
+      "backgroundColor": "255,192,0"
+    }
+  ],
+  "columnsWidth": [
+    {
+      "fromCell": "A1",
+      "width": 14.29
+    },
+    {
+      "fromCell": "B1",
+      "width": 5.57
+    },
+    {
+      "fromCell": "C1",
+      "width": 83.43
+    },
+    {
+      "fromCell": "D1",
+      "toCell": "FF1",
+      "width": 12
+    }
+  ],
+  "fixedCells": [
+    {
+      "cell": "A1",
+      "value": "Reporte:",
+      "style": "title-1"
+    },
+    {
+      "cell": "A2",
+      "value": "Desde:",
+      "style": "title-1"
+    },
+    {
+      "cell": "A3",
+      "value": "Hasta:",
+      "style": "title-1"
+    },
+    {
+      "cell": "B1",
+      "value": "Atención a Clientes",
+      "style": "title"
+    },
+
+    {
+      "cell": "C19",
+      "value": "Nombre del Cliente",
+      "style": "detail-header"
+    },
+    {
+      "cell": "D19",
+      "value": "Folio",
+      "style": "detail-header"
+    },
+    {
+      "cell": "E19",
+      "value": "Contrato",
+      "style": "detail-header"
+    },
+    {
+      "cell": "F19",
+      "value": "Año",
+      "style": "detail-header"
+    },
+    {
+      "cell": "G19",
+      "value": "Resolutor",
+      "style": "detail-header"
+    },
+    {
+      "cell": "H19",
+      "value": "Entidad",
+      "style": "detail-header"
+    },
+    {
+      "cell": "I19",
+      "value": "Concepto",
+      "style": "detail-header"
+    },
+    {
+      "cell": "J19",
+      "value": "Segmento",
+      "style": "detail-header"
+    },
+    {
+      "cell": "K19",
+      "value": "Fecha Alta",
+      "style": "detail-header"
+    },
+    {
+      "cell": "L19",
+      "value": "Fecha Final",
+      "style": "detail-header"
+    },
+    {
+      "cell": "M19",
+      "value": "Actividad",
+      "style": "detail-header"
+    },
+    {
+      "cell": "N19",
+      "value": "Estatus",
+      "style": "detail-header"
+    },
+    {
+      "cell": "O19",
+      "value": "SOEID Solicitante",
+      "style": "detail-header"
+    }
+  ],
+  "recordSets": [
+    {
+      "index": 0,
+      "name": "Entidades",
+      "type": "memory",
+      "recordSet": "mem-entidades"
+    },
+    {
+      "index": 0,
+      "name": "Solicitudes",
+      "type": "memory",
+      "recordSet": "mem-solicitudes"
+    },
+    {
+      "index": 0,
+      "name": "Segmentos memory",
+      "type": "memory",
+      "recordSet": "mem-segmentos"
+    },
+    {
+      "index": 1,
+      "name": "Coross tab",
+      "type": "crosstab-two-levels",
+      "fromRow": 3,
+      "fromCol": 1,
+      "tabSize": 6,
+      "recordSets": {
+        "firstRecorSet": "mem-entidades",
+        "secondRecordSet": "mem-solicitudes",
+        "columnsRecordSet": "mem-segmentos",
+        "crossDataRecordSet": {
+          "recordSet": "segmento-data",
+          "firstLevelParamIn": "A4",
+          "secondLevelParamIn": "A5",
+          "columnParamIn": "A6"
+        }
+      },
+      "styles": {
+        "firstLevelStyle": "header-entidad",
+        "firstLevelStyleData": "header-entidad-num",
+        "secondLevelStyle": "row-solicitud",
+        "dataStyle": "row-solicitud-num",
+        "mainTabStyle": ["header-segmento-0", "header-segmento-1"],
+        "tabStyles": [
+          "header-entidad",
+          "header-en-tiempo",
+          "header-vencida",
+          "header-no-atendida",
+          "header-rechazada",
+          "header-eliminada"
+        ]
+      },
+      "data": {
+        "vertical": {
+          "showName": true,
+          "showDescription": true,
+          "label": "Entidades"
+        },
+        "horizontal": {
+          "showDescription": true,
+          "showName": true,
+          "showTotalAt": "start",
+          "formula": "sum",
+          "labels": [
+            "En tiempo",
+            "Vencidas",
+            "No Atendidas",
+            "Rechazadas",
+            "Eliminadas"
+          ]
+        }
+      }
+    },
+    {
+      "index": 4,
+      "name": "Detail data",
+      "direction": "down",
+      "fromRow": 19,
+      "fromCol": 2,
+      "recordSet": "detail",
+      "recordSetWithStyles": false,
+      "defaultStyle": null
+    }
+  ],
+  "sqlRecordSets": {
+    "entidades-solicitudes": {
+      "sql": [
+        " select 0, 'header-entidad' asStyle1, wkf_name, 'header-entidad'  asStyle2, WKF_DESCRIPTION ",
+        " from WKF_STG ",
+        " where wkf_path like '/Catálogos/Accival/Entidad/%' ",
+        " and WKF_LEVEL = 3 ",
+        " and wkf_name = 'BN' ",
+        "  ",
+        " union all ",
+        "  ",
+        " select * from ( select 1, 'row-solicitud'  asStyle1, wkf_name, 'row-solicitud'  asStyle2, WKF_DESCRIPTION ",
+        " from WKF_STG ",
+        " where wkf_path like '/Catálogos/Accival/Tipo de Solicitud/%' ",
+        " and WKF_LEVEL = 3 ",
+        " order by wkf_path ) ",
+        "  ",
+        " union all ",
+        "  ",
+        " select 2,'header-entidad' asStyle1,  wkf_name, 'header-entidad' asStyle2, WKF_DESCRIPTION ",
+        " from WKF_STG ",
+        " where wkf_path like '/Catálogos/Accival/Entidad/%' ",
+        " and WKF_LEVEL = 3 ",
+        " and wkf_name = 'CB' ",
+        "  ",
+        " union ",
+        "  ",
+        " select * from ( select 3, 'row-solicitud'  asStyle1, wkf_name, 'row-solicitud'  asStyle2, WKF_DESCRIPTION ",
+        "  from WKF_STG ",
+        " where wkf_path like '/Catálogos/Accival/Tipo de Solicitud/%' ",
+        " and WKF_LEVEL = 3 ",
+        " order by wkf_path ) ",
+        "  ",
+        " order by 1 "
+      ],
+      "columnsFrom": 2,
+      "params": []
+    },
+    "segmentos": {
+      "sql": [
+        "select 'header-segmento-1' asStyle1, WKF_DESCRIPTION ",
+        "from WKF_STG ",
+        "where wkf_path like '/Catálogos/Accival/Segmento/%' ",
+        "and WKF_LEVEL = 3 ",
+        "order by wkf_path "
+      ],
+      "columnsFrom": 1,
+      "params": []
+    },
+    "segmentos-headers": {
+      "sql": [
+        "  select 'header' asStyle1, WKF_NAME ",
+        "       , 'header-en-tiempo' asStyle2, 'En tiempo' ",
+        "       , 'header-vencida' asStyle3, 'Vencidas' ",
+        "       , 'header-no-atendida' asStyle4, 'No Atendidas' ",
+        "       , 'header-rechazada' asStyle5, 'Rechazadas' ",
+        "     from WKF_STG ",
+        "    where wkf_path like '/Catálogos/Accival/Segmento/%' ",
+        "      and WKF_LEVEL = 3 ",
+        " order by wkf_path "
+      ],
+      "columnsFrom": 1,
+      "params": []
+    },
+    "segmento-data": {
+      "sql": [
+        "select    ( select count(1) from ACC_TB_SOLICITUDES ",
+        "             where ENTIDAD = asEntidadName ",
+        "               and TIPO_SOLICITUD = asTipoSolicitudName ",
+        "               and SEGMENTO = asSegmentoName ",
+        "               and ACTIVITY = 'Atendidas' ",
+        "               and ID_ESTATUS = 1",
+        "               and trunc(FECHA_CREACION) between asDateIni and asDateFin) AI_EN_TIEMPO ",
+        "        , ( select count(1) from ACC_TB_SOLICITUDES ",
+        "             where ENTIDAD = asEntidadName ",
+        "               and TIPO_SOLICITUD = asTipoSolicitudName ",
+        "               and SEGMENTO = asSegmentoName ",
+        "               and ACTIVITY = 'Atendidas' ",
+        "               and ID_ESTATUS = 0 ",
+        "               and trunc(FECHA_CREACION) between asDateIni and asDateFin ) AI_VENCIDA ",
+        "        , ( select count(1) from ACC_TB_SOLICITUDES ",
+        "             where ENTIDAD = asEntidadName ",
+        "               and TIPO_SOLICITUD = asTipoSolicitudName ",
+        "               and SEGMENTO = asSegmentoName ",
+        "               and ACTIVITY = 'En resolución' ",
+        "               and trunc(FECHA_CREACION) between asDateIni and asDateFin ) AI_NO_ATENDIDAS ",
+        "        , ( select count(1) ",
+        "              from ACC_TB_SOLICITUDES ",
+        "             where ENTIDAD = asEntidadName ",
+        "               and TIPO_SOLICITUD = asTipoSolicitudName ",
+        "               and SEGMENTO = asSegmentoName ",
+        "               and ACTIVITY = 'Rechazadas' ",
+        "               and trunc(FECHA_CREACION) between asDateIni and asDateFin ) AI_Rechazadas ",
+        "        , ( select count(1) from ACC_TB_SOLICITUDES ",
+        "             where ENTIDAD = asEntidadName ",
+        "               and TIPO_SOLICITUD = asTipoSolicitudName ",
+        "               and SEGMENTO = asSegmentoName ",
+        "               and ACTIVITY = 'Eliminadas' ",
+        "               and trunc(FECHA_CREACION) between asDateIni and asDateFin ) AI_Eliminadas ",
+        "  from ( ",
+        "           select distinct entidad asEntidadName, TIPO_SOLICITUD asTipoSolicitudName, SEGMENTO asSegmentoName, ",
+        "                           to_Date(?, 'YYYY/MM/DD') asDateIni, ",
+        "                           to_Date(?, 'YYYY/MM/DD') asDateFin ",
+        " ",
+        "           from ACC_TB_SOLICITUDES ",
+        "           where entidad = ? ",
+        "             and TIPO_SOLICITUD = ? ",
+        "             and SEGMENTO = ? ",
+        "       ) "
+      ],
+      "columnsFrom": 1,
+      "params": [
+        {
+          "type": "string",
+          "name": "fromDate",
+          "value": "B2"
+        },
+        {
+          "type": "string",
+          "name": "toDate",
+          "value": "B3"
+        },
+        {
+          "type": "string",
+          "name": "entidad",
+          "value": "A4"
+        },
+        {
+          "type": "string",
+          "name": "tipoSolicitud",
+          "value": "A5"
+        },
+        {
+          "type": "string",
+          "name": "segmento",
+          "value": "A6"
+        }
+      ]
+    },
+    "detail": {
+      "sql": [
+        "select CLIENTE_NOMBRE, asStg.WKF_NAME, NUM_CONTRATO, ANIO,RESOLUTOR_SOEID,ENTIDAD,TIPO_SOLICITUD,SEGMENTO ",
+        "     , to_char( FECHA_CREACION, 'DD/MM/YYYY HH:MI:SS AM' )",
+        "     , to_char( FECHA_FINAL, 'DD/MM/YYYY HH:MI:SS AM' )    ",
+        "     , Activity Actividad ",
+        "     , case ACTIVITY ",
+        "       when 'En resolución' then ",
+        "            'No atendidas' ",
+        "       when 'Atendidas' then ",
+        "         case ID_estatus ",
+        "         when 0 then ",
+        "             'Atendidas vencidas' ",
+        "         else ",
+        "             'Atendidas En Tiempo' ",
+        "        end ",
+        "       when 'Rechazadas' then ",
+        "           case ID_estatus ",
+        "               when 0 then ",
+        "                   'Rechazadas vencidas' ",
+        "               else ",
+        "                   'Rechazadas En Tiempo' ",
+        "               end ",
+        "       when 'Eliminadas' then ",
+        "           'Eliminadas' ",
+        "    end Estatus ",
+        "      , asStg.WKF_CREATOR ",
+        "  from ACC_TB_SOLICITUDES asSol ",
+        "     , WKF_STG asStg ",
+        " where asStg.WKF_STG = asSol.ID_SOLICITUD ",
+        "   and activity <> 'Inicio' ",
+        "   and trunc(FECHA_CREACION) between to_Date(?, 'YYYY/MM/DD')  and to_Date(?, 'YYYY/MM/DD') ",
+        "order by CLIENTE_NOMBRE "
+      ],
+      "columnsFrom": 1,
+      "params": [
+        {
+          "name": "FechaDesde",
+          "type": "string",
+          "value": "B2"
+        },
+        {
+          "name": "FechaHasta",
+          "type": "string",
+          "value": "B3"
+        }
+      ]
+    },
+    "mem-entidad-solicitudes": {
+      "sql": [
+        "select rownum + 3, asList.* ",
+        "  from ( ",
+        "           select 0, wkf_name ",
+        "           from WKF_STG ",
+        "           where wkf_path like '/Catálogos/Accival/Entidad/%' ",
+        "             and WKF_LEVEL = 3 ",
+        "             and wkf_name = 'BN' ",
+        " ",
+        "           union all ",
+        " ",
+        "           select * ",
+        "           from (select 1, wkf_name ",
+        "                 from WKF_STG ",
+        "                 where wkf_path like '/Catálogos/Accival/Tipo de Solicitud/%' ",
+        "                   and WKF_LEVEL = 3 ",
+        "                 order by wkf_path) ",
+        " ",
+        "           union all ",
+        " ",
+        "           select 2, wkf_name ",
+        "           from WKF_STG ",
+        "           where wkf_path like '/Catálogos/Accival/Entidad/%' ",
+        "             and WKF_LEVEL = 3 ",
+        "             and wkf_name = 'CB' ",
+        " ",
+        "           union ",
+        " ",
+        "           select * ",
+        "           from (select 3, wkf_name ",
+        "                 from WKF_STG ",
+        "                 where wkf_path like '/Catálogos/Accival/Tipo de Solicitud/%' ",
+        "                   and WKF_LEVEL = 3 ",
+        "                 order by wkf_path) ",
+        " ",
+        "           order by 1 ",
+        "       ) asList "
+      ],
+      "columnsFrom": 1,
+      "params": []
+    },
+    "mem-entidades": {
+      "sql": [
+        "select WKF_NAME, WKF_DESCRIPTION ",
+        " from WKF_STG ",
+        "where wkf_path like '/Catálogos/Accival/Entidad/%' ",
+        "  and WKF_LEVEL = 3 ",
+        "order by wkf_path "
+      ],
+      "columnsFrom": 1,
+      "params": []
+    },
+    "mem-solicitudes": {
+      "sql": [
+        "select WKF_NAME, WKF_DESCRIPTION ",
+        " from WKF_STG ",
+        "where wkf_path like '/Catálogos/Accival/Tipo de Solicitud/%' ",
+        "  and WKF_LEVEL = 3 ",
+        "order by wkf_path "
+      ],
+      "columnsFrom": 1,
+      "params": []
+    },
+    "mem-segmentos": {
+      "sql": [
+        "select WKF_NAME, WKF_DESCRIPTION ",
+        " from WKF_STG ",
+        "where wkf_path like '/Catálogos/Accival/Segmento/%' ",
+        "  and WKF_LEVEL = 3 ",
+        "order by wkf_path "
+      ],
+      "columnsFrom": 1,
+      "params": []
+    }
+  }
+}
